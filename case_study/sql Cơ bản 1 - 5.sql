@@ -56,7 +56,7 @@ SELECT
     hop_dong.ngay_lam_hop_dong,
     hop_dong.ngay_ket_thuc,
     dich_vu.ten_dich_vu,
-    SUM(ifnull(dich_vu.chi_phi_thue,0) + ifnull(hop_dong_chi_tiet.so_luong,0) * ifnull(dich_vu_di_kem.gia,0)) as tong_tien
+    ifnull(dich_vu.chi_phi_thue,0) + ifnull(hop_dong_chi_tiet.so_luong,0) * ifnull(dich_vu_di_kem.gia,0) as tong_tien
 FROM
     khach_hang
         left JOIN
@@ -73,3 +73,7 @@ FROM
     group by hop_dong.ma_hop_dong;
 
 
+
+select ma_khach_hang, ho_va_ten from khach_hang 
+order by ma_khach_hang
+limit 3 offset 2;

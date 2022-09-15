@@ -59,3 +59,4 @@ from hop_dong hd
 left join hop_dong_chi_tiet hdct 
 on hd.ma_hop_dong = hdct.ma_hop_dong
 group by ma_hop_dong;
+
