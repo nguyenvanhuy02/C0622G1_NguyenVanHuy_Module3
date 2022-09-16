@@ -12,7 +12,7 @@ ten_trinh_do varchar(45)
 );
 create table bo_phan(
 ma_bo_phan int primary key auto_increment,
-ten_bo_phan varbinary(45)
+ten_bo_phan varchar(45)
 );
 create table loai_khach(
 ma_loai_khach int primary key auto_increment,

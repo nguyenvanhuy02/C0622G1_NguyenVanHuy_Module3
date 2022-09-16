@@ -96,3 +96,15 @@ where year(hd.ngay_lam_hop_dong) between 2020 and 2021
 group by nv.ma_nhan_vien
 having count(nv.ma_nhan_vien)<= 3
 order by nv.ma_nhan_vien;
+
+
+-- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
+delete nhan_vien from nhan_vien 
+left join hop_dong 
+on nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
+ where exists (
+select * , hop_dong.ma_hop_dong
+where hop_dong.ma_hop_dong is null
+order by nhan_vien.ma_nhan_vien
+) ; 
+select nhan_vien.* from nhan_vien;
