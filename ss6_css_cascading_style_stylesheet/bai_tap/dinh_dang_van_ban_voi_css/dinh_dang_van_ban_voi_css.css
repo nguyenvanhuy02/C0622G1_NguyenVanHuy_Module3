@@ -1,0 +1,27 @@
+body {
+    text-align : justify;      /* Sắp xếp nội dung cho các dòng có chiều rộng bằng nhau.*/
+    display: block;
+    margin: 0px auto;
+    width: 900px;
+    /*background-position: center;*/
+}
+h1 {
+    display: block;
+    border-bottom : 1px solid #C8CCD1 ;
+}
+p {
+    text-indent: 40px;
+}
+.tieu_de {
+    margin-top : -20px;
+}
+.chu_in_dam {
+    font-weight: bold;
+    color: black;
+}
+.chu_nho {
+    font-size: 70%;
+}
+span {
+    color: blue;
+}

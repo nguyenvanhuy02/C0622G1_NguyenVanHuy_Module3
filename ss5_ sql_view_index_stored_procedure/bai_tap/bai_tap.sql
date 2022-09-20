@@ -39,7 +39,9 @@ drop index i_products on products;
 
 
 -- Sử dụng câu lệnh EXPLAIN để biết được câu lệnh SQL của bạn thực thi như nào
-explain select * from products where product_code = "sp3";
+explain select * 
+from products 
+where product_code = "sp3";
 
 
 -- So sánh câu truy vấn trước và sau khi tạo index ----> dùng index nhanh hơn

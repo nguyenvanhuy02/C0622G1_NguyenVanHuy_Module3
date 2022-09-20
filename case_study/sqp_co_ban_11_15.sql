@@ -59,27 +59,14 @@ on hdct.ma_hop_dong = hd.ma_hop_dong
 -- Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung
 -- (được tính dựa trên việc count các ma_dich_vu_di_kem).
 
-select hd.ma_hop_dong ,ldv.ten_loai_dich_vu,dvdk.ten_dich_vu_di_kem ,count(hdct.so_luong) as so_luong
-from dich_vu_di_kem dvdk
-left join hop_dong_chi_tiet hdct
-on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
-left join hop_dong hd
-on hdct.ma_hop_dong = hd.ma_hop_dong
-join dich_vu dv
-on hd.ma_dich_vu = dv.ma_dich_vu
-join loai_dich_vu ldv
-on dv.ma_loai_dich_vu = ldv.ma_loai_dich_vu
-group by dvdk.ma_dich_vu_di_kem
-having so_luong = (
-select min(hdct.so_luong)
-from dich_vu_di_kem dvdk
-left join hop_dong_chi_tiet hdct
-on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
-left join hop_dong hd
-on hdct.ma_hop_dong = hd.ma_hop_dong
-)
+select hd.ma_hop_dong, dv.ten_dich_vu, dvdk.ten_dich_vu_di_kem, count(hdct.ma_dich_vu_di_kem) as so_lan_su_dung
+from hop_dong as hd
+join dich_vu as dv on hd.ma_dich_vu = dv.ma_dich_vu
+join hop_dong_chi_tiet as hdct on hd.ma_hop_dong = hdct.ma_hop_dong
+join dich_vu_di_kem as dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+group by hdct.ma_dich_vu_di_kem
+having count(hdct.ma_dich_vu_di_kem) =1
 order by hd.ma_hop_dong;
-
 
 -- 15.	Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi
 -- mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021.
@@ -97,14 +84,3 @@ group by nv.ma_nhan_vien
 having count(nv.ma_nhan_vien)<= 3
 order by nv.ma_nhan_vien;
 
-
--- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
-delete nhan_vien from nhan_vien 
-left join hop_dong 
-on nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
- where exists (
-select * , hop_dong.ma_hop_dong
-where hop_dong.ma_hop_dong is null
-order by nhan_vien.ma_nhan_vien
-) ; 
-select nhan_vien.* from nhan_vien;
