@@ -1,0 +1,26 @@
+/*html,body {*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+.box {
+    background-color: orange;
+    height: 100px;
+    position: relative;
+    /*Cách 3:
+    display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+h3{
+    position: absolute;
+    top: 25%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    /*left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    /*Cách 2 : kèm theo dis play flex
+    margin: auto;*/
+    /*Cách 1 :
+    text-align: center;*/
+    /*line-height: 100px;*/
+}
