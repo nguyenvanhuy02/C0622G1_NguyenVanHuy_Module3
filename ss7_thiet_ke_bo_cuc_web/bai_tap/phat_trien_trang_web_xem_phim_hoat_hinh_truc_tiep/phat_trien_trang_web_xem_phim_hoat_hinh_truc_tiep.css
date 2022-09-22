@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading {
+    line-height: 70px;
+    color: cornflowerblue;
+    height: 70px;
+    background: url("https://img5.thuthuatphanmem.vn/uploads/2021/12/28/hinh-anh-bau-troi-dem-dep-anime_090644954.jpg") top center / cover no-repeat;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    height: 50px;
+    background: #ccc;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.nav {
+    display: inline-block;
+}
+.nav > li {
+    display: inline-block;
+    line-height: 50px;
+}
+.nav li {
+    position: relative;
+}
+
+.nav > li > a {
+    text-transform: initial;
+    color: #000;
+}
+.nav li a {
+    text-decoration: none;
+    padding: 0 24px;
+    display : block;
+    border-right: 1px solid #000;
+}
+.nav li:hover {
+    display: inline-block;
+}
+.nav > li:hover > a{
+    color: #CDCDCD;
+    background-color: #2c3034;
+}
+
+.main>.col-1 {
+    width: 30%;
+    height: 960px;
+    background: lightcyan;
+    border: 1px solid #ccc;
+    float: left;
+}
+.main>.col-2{
+    width: 70%;
+    float: left;
+}
+.main>.col-2>p{
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.main>.col-1>.row-1,.row-2,.row-3{
+    height: 320px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+
