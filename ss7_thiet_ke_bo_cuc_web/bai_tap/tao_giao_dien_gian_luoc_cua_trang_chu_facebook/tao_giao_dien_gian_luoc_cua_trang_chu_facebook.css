@@ -1,0 +1,181 @@
+
+    /* Phân chỉa tỉ lệ của 12 column*/
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/*Chỉnh hết thành border-box: không làm ảnh hưởng đến phần tử bên ngoài*/
+* {
+    box-sizing: border-box;
+}
+
+/* Tất cả column căn chỉnh về bên trái và phân chia nôi dụng trong ô padding 5px */
+[class*="col-"] {
+    float: left;
+    /*padding: 5px;*/
+}
+
+/*thẻ giả: sau mỗi dòng sẽ tạo ra thẻ giả sẽ reset lại lateout để những dòng phía sau không bị ảnh hưởng
+bởi các dòng trước đó*/
+.row::after {
+    clear: both;
+    display: block;
+    content: " ";
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+body {
+    font-family: Tahoma;
+    font-size: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo a img {
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.search {
+    height: 60px;
+    line-height: 60px;
+    margin-left: -20px;
+}
+
+.search input {
+    height: 40px;
+    text-align: center;
+    background: #f1f1f1 url("https://www.pngall.com/wp-content/uploads/8/Search-PNG-Clipart.png") no-repeat 2px;
+    text-indent: 10px;
+    font-size: 15px;
+    color: grey;
+    border-radius: 10px;
+    border: 1px solid #f1f1f1;
+}
+
+.home ul li {
+    list-style: none;
+    float: left;
+}
+.home ul li a {
+}
+.home ul li a img {
+    height: 40px;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+.user ul {
+    margin-right: 10px;
+}
+.user ul li {
+    list-style: none;
+    float: right;
+    /*margin-right: 5px;*/
+}
+.user ul li a img {
+    height: 38px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.home ul li a :hover{
+    background: #f1f1f1;
+    border-bottom: 5px solid #32a4e7;
+}
+.user ul li a :hover{
+    background: #f1f1f1;
+}
+.center{
+    background: #f1f1f1;
+    height: 750px;
+}
+.left-1 ul {
+    list-style: none;
+}
+
+.left-1 a  {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    float: left;
+}
+.left-1 a img {
+    height: 35px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.left-1 .text {
+    margin-top: 20px;
+    margin-left: -50px;
+}
+.center hr {
+    margin: 10px 10px;
+}
+.center h3 {
+    margin: 0px 10px;
+    color: grey;
+}
+.center .left-1:hover {
+    background: #CDCDCD;
+}
+.center .noi-dung {
+    background: white;
+    height: 650px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
