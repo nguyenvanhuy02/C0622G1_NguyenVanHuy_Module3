@@ -1,0 +1,48 @@
+html{
+    display: flex;
+    justify-content: center;
+}
+
+.app{
+    width: 900px;
+    border: 1px solid #000000;
+}
+.header, .nav, .footer{
+    border: 1px solid #000000;
+    margin: 2px 2px;
+    text-align: center;
+}
+.content{
+    display: flex;
+
+}
+.content .left{
+    width: 80%;
+}
+.content .right{
+    margin: 2px 2px;
+    flex: 1;
+    padding-bottom: 1px ;
+}
+.section, .article{
+    height: 200px;
+    border: 1px solid #000000;
+    margin: 2px 2px;
+    text-align: center;
+
+}
+.section{
+    background: red;
+    line-height: 200px;
+}
+.article{
+    background: green;
+    line-height: 200px;
+}
+.asd{
+    height: 100%;
+    background: lightcoral;
+    border: 1px solid #000000;
+    text-align: center;
+    line-height: 400px;
+}

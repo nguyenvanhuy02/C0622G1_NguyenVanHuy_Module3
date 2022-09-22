@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#menu {
+    position: fixed;
+    width: 100%;
+    /*height: 46px;*/
+    background-color: #000;
+    z-index: 1;
+    top: 0px;
+}
+.heading {
+    display: inline-block;
+}
+
+.heading > li {
+    display: inline-block;
+    position: relative;
+}
+.heading > li > a {
+    text-transform: uppercase;
+    color: #fff;
+}
+.heading li a {
+    text-decoration: none;
+    line-height: 46px;  /* cân giữa chữ = height */
+    padding: 0 24px;
+    display: block;
+}
+.heading > li:hover > a{
+    color: #000;
+    background-color: #ccc;
+}
+
+.content {
+    /*position: fixed;*/
+    width: 100%;
+    margin-top: 46px;
+    height: 600px;
+}
+.content > .left{
+    width: 20%;
+    height: 600px;
+    background-color: #ccc;
+    text-align: center;
+    float: left;
+}
+.content > .left > .table > li > a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+.table {
+    position: relative;
+    top: 10px;
+}
+.content > .left > .table > li{
+    margin-bottom: 20px;
+}
+
+.content > .right{
+    width: 20%;
+    height: 600px;
+    background-color: #ccc;
+    text-align: center;
+    float: right;
+}
+
+.right .ADS {
+    border: 1px solid #f0f0f0;
+    margin: 10px;
+    height: 100px ;
+    text-align: center;
+    line-height: 100px;
+    background-color: #f2e7c3;
+    border-radius: 10px;
+}
+
+/*.clearfix:before, .clearfix:after {*/
+/*    content: "";*/
+/*    display: table;*/
+/*}*/
+/*.clearfix:after {*/
+/*    clear: both;*/
+/*}*/
+/*.clearfix {*/
+/*    zoom: 1;*/
+/*}*/
+.footer {
+    /*margin-top: 500px;*/
+    width: 100%;
+    height: 100px;
+    background: #4f5050;
+    line-height: 100px;
+    text-align: center;
+}
+
+.welcome , .test{
+    height: 300px;
+    border: 1px solid #000000;
+    margin: 2px 2px;
+}
+.content > .between {
+    margin-left: 20%;
+    margin-right: 20%;
+    border-bottom: 5px solid #000000;
+}
