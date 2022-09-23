@@ -51,7 +51,7 @@
 
 .main>.col-1 {
     width: 30%;
-    height: 960px;
+    height: 1280px;
     background: lightcyan;
     border: 1px solid #ccc;
     float: left;
@@ -68,6 +68,14 @@
 .main>.col-1>.row-1,.row-2,.row-3{
     height: 320px;
     border: 1px solid #ccc;
+}
+
+.footer{
+    height: 50px;
+    background: #ccc;
+    clear: both;
+    text-align: center;
+
 }
 
 

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng Landing Page</title>
+    <link rel="stylesheet" href="../../../bootstrap-5.0.2-dist/css/bootstrap.css">
+    <style>
+        #slider{
+            position: relative;
+            margin-top: 0 ;
+            /*padding-top: 50%;*/
+            /*!*background:url("../img/ny.jpg") top center / cover no-repeat;*!*/
+        }
+
+        #slider .text-content{
+            position: absolute;
+            bottom: 48px;
+            color: #000;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        #slider .text-heeding{
+            font-weight: 700;
+            font-size: 50px;
+        }
+
+        #slider .text-description{
+            font-size: 15px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid px-0 ">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/logo_micro.png" height="30px" width="150px"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Surface</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Computers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarComputersForBusiness" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Computers for Business
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarAccessories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Accessories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarShopNow" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop now
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Support</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a style="font-size: 13px;margin-top: 6px; margin-left: 241px" class="nav-link dropdown-toggle" href="#" id="navbarAllMicrosoft" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            All Microsoft
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <img style="width: 21px;margin-top: 15px;margin-left: 15px" src="./img/icon_search.png" alt="">
+                    </li>
+                    <li class="nav-item">
+                        <img style="width: 21px;margin-top: 15px;margin-left: 15px" src="./img/icon_shopping.png" alt="">
+                    </li>
+                    <li class="nav-item">
+                        <img style="width: 21px;margin-top: 15px;margin-left: 15px" src="./img/Account_icon.webp" alt="">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div id="slider">
+        <div  id="carouselExampleControls" class="carousel slide" style="transition:opacity 0s .2s" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/anh_bia.jpg" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/anh_bia.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/anh_bia.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="text-content">
+            <h1 class="text-heeding">
+                Laptops designed by Microsoft
+            </h1>
+            <div class="text-description">
+                Surface laptops and 2-in-1s with Windows 11 empower you to create at home, in the classroom, and on the go.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+</body>
+</html>
