@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="currency_converter_jsp.main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/currency_converter_jsp_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="currency_converter_jsp.main" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="currency_converter_jsp.main/web/Web Gradle : currency_converter_jsp-1.0-SNAPSHOT.war" />
+    </root>
+  </artifact>
+</component>
