@@ -27,6 +27,8 @@
         <th>Giá sản phẩm</th>
         <th>Mô tả sản phẩm</th>
         <th>Nhà sản xuất</th>
+        <th>Chỉnh sửa</th>
+        <th>Xoá</th>
     </tr>
     <c:forEach var="product" items="${productList}">
         <tr>
@@ -35,6 +37,8 @@
             <td>${product.getPrice()}</td>
             <td>${product.getDescribe()}</td>
             <td>${product.getProducer()}</td>
+            <td><a href="/product?action=edit&id=${product.getId()}">Chỉnh sửa</a></td>
+            <td><a href="/product?action=delete&id=${product.getId()}">Xoá</a></td>
         </tr>
     </c:forEach>
 </table>

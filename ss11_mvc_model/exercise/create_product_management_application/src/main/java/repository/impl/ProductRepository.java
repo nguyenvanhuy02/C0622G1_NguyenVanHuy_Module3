@@ -32,7 +32,7 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void update(int id, Product product) {
-
+        productList.add(id,product);
     }
 
     @Override
@@ -42,6 +42,6 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public Product findById(int id) {
-        return null;
+        return productList.get(id);
     }
 }
