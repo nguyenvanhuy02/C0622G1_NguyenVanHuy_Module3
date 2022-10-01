@@ -1,26 +1,30 @@
 <%--
   Created by IntelliJ IDEA.
   User: Admin
-  Date: 30/9/2022
-  Time: 2:55 PM
+  Date: 1/10/2022
+  Time: 2:48 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Product</title>
+    <title>Tìm kiếm sản phẩm</title>
 </head>
 <body>
-<h1>Danh sách sản phẩm</h1>
+<h1>Tìm kiếm sản phẩm</h1>
 
-<c:if test="${mess != null}">
-    <span>${mess}</span>
-</c:if>
+<p>
+    <a href="/product">Quay lại</a>
+</p>
 
-<a href="/product?action=add">Thêm mới</a>
-<a href="/product?action=find">Tìm kiếm</a>
-
+<form action="/product?action=find" method="post">
+    <fieldset>
+        <legend>Tìm kiếm sản phẩm</legend>
+        Name : <input type="text" name="name">
+        <input type="submit" value="Tìm kiếm">
+    </fieldset>
+</form>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -30,9 +34,8 @@
         <th>Nhà sản xuất</th>
         <th>Chỉnh sửa</th>
         <th>Xoá</th>
-        <th>Thông tin chi tiết</th>
     </tr>
-    <c:forEach var="product" items="${productList}">
+    <c:forEach var="product" items="${listProducts}">
         <tr>
             <td>${product.getId()}</td>
             <td>${product.getName()}</td>
@@ -41,7 +44,6 @@
             <td>${product.getProducer()}</td>
             <td><a href="/product?action=edit&id=${product.getId()}">Chỉnh sửa</a></td>
             <td><a href="/product?action=delete&id=${product.getId()}">Xoá</a></td>
-            <td><a href="/product?action=view&id=${product.getId()}">Thông tin</a></td>
         </tr>
     </c:forEach>
 </table>

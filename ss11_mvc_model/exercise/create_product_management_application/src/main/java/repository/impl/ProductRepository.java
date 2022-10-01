@@ -31,17 +31,40 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void update(int id, Product product) {
-        productList.add(id,product);
+    public void update(Product product) {
+        int index = productList.indexOf(product);
+        productList.set(index,product);
     }
 
     @Override
     public void remove(int id) {
-        productList.remove(id);
+        for (Product product: productList) {
+            if (product.getId()==id){
+                productList.remove(product);
+                break;
+            }
+        }
     }
 
     @Override
-    public Product findById(int id) {
-        return productList.get(id);
+    public List<Product> findByName(String name) {
+        List<Product> list = new ArrayList<>();
+        for (Product product:productList) {
+            if (product.getName().contains(name) && !name.equals("")){
+                list.add(product);
+            }
+        }
+        return list;
+    }
+
+    @Override
+    public Product  findById(int id) {
+//        List<Product> list = new ArrayList<>();
+        for (Product product: productList) {
+            if (product.getId()==id){
+                return product;
+            }
+        }
+        return null;
     }
 }
