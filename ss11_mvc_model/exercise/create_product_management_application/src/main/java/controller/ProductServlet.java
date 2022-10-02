@@ -83,33 +83,9 @@ public class ProductServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-//        try {
-//            request.getRequestDispatcher("/view/product/edit.jsp").forward(request,response);
-//        } catch (ServletException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 
     private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        Product product = this.productService.findById(id);
-//        RequestDispatcher dispatcher;
-//        if (product == null) {
-//            dispatcher = request.getRequestDispatcher("error-404.jsp");
-//        } else {
-//            request.setAttribute("product", product);
-//            RequestDispatcher dispatcher = request.getRequestDispatcher("/view/product/delete.jsp");
-//        }
-//        try {
-//            dispatcher.forward(request, response);
-//        } catch (ServletException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
         request.setAttribute("product",product);

@@ -10,9 +10,9 @@ public class ProductRepository implements IProductRepository {
     private static List<Product> productList = new ArrayList<>();
     static {
         productList.add(new Product(1,"Bánh Kẹo",12000,"Bánh kẹo thơm ngon","Bánh kẹo tài trợ"));
-        productList.add(new Product(2,"Bánh Kẹo",15000,"Bánh kẹo thơm ngon","Bánh kẹo tài trợ"));
-        productList.add(new Product(3,"Bánh Kẹo",13000,"Bánh kẹo thơm ngon","Bánh kẹo tài trợ"));
-        productList.add(new Product(4,"Bánh Kẹo",22000,"Bánh kẹo thơm ngon","Bánh kẹo tài trợ"));
+        productList.add(new Product(2,"Điện thoại",1500000,"ip 11","Nhà tài trợ"));
+        productList.add(new Product(3,"Máy tính",13000000,"Dell","Nhà tài trợ"));
+        productList.add(new Product(4,"Máy quạt",220000,"Vù vù","Nhà tài trợ"));
     }
 
     @Override
@@ -20,10 +20,6 @@ public class ProductRepository implements IProductRepository {
         return productList;
     }
 
-    @Override
-    public void display(Product product) {
-
-    }
 
     @Override
     public void add(Product product) {
@@ -50,7 +46,7 @@ public class ProductRepository implements IProductRepository {
     public List<Product> findByName(String name) {
         List<Product> list = new ArrayList<>();
         for (Product product:productList) {
-            if (product.getName().contains(name) && !name.equals("")){
+            if (product.getName().contains(name)){
                 list.add(product);
             }
         }
@@ -59,7 +55,6 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public Product  findById(int id) {
-//        List<Product> list = new ArrayList<>();
         for (Product product: productList) {
             if (product.getId()==id){
                 return product;

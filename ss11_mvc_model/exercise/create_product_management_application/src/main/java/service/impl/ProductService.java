@@ -16,10 +16,6 @@ public class ProductService implements IProductService {
         return productRepository.findAll();
     }
 
-    @Override
-    public void display(Product product) {
-
-    }
 
     @Override
     public void add(Product product) {
