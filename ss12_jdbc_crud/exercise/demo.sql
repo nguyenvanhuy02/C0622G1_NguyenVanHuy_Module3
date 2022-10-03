@@ -13,3 +13,4 @@ insert into users(name, email, country) values('Minh','minh@codegym.vn','Viet Na
 insert into users(name, email, country) values('Kante','kante@che.uk','Kenia');
 
 select * from users;
+select * from users order by name;
