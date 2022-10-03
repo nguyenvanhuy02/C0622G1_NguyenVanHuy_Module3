@@ -30,9 +30,9 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 showDeleteForm(request,response);
                 break;
-            case "find":
-                showFindForm(request,response);
-                break;
+//            case "find":
+//                showFindForm(request,response);
+//                break;
             case "view":
                 ShowViewForm(request,response);
                 break;
@@ -55,10 +55,11 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void showFindForm(HttpServletRequest request, HttpServletResponse response) {
-        List<Product> products = productService.findAll();
-        request.setAttribute("product",products);
+        String name = request.getParameter("name");
+        List<Product> list = productService.findByName(name);
+        request.setAttribute("productList",list);
         try {
-            request.getRequestDispatcher("/view/product/find.jsp").forward(request,response);
+            request.getRequestDispatcher("/view/product/list.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -86,17 +87,23 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Product product = this.productService.findById(id);
-        request.setAttribute("product",product);
+
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        Product product = this.productService.findById(id);
+//        request.setAttribute("product",product);
+//        try {
+//            request.getRequestDispatcher("/view/product/delete.jsp").forward(request,response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        productService.remove(Integer.parseInt(request.getParameter("id")));
         try {
-            request.getRequestDispatcher("/view/product/delete.jsp").forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
+            response.sendRedirect("product");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) {
@@ -134,28 +141,16 @@ public class ProductServlet extends HttpServlet {
             case "edit":
                 updateProduct(request, response);
                 break;
-            case "delete":
-                deleteProduct(request,response);
-                break;
+//            case "delete":
+//                deleteProduct(request,response);
+//                break;
             case "find":
-                findProduct(request,response);
+                showFindForm(request,response);
             default:
-
+                break;
         }
     }
 
-    private void findProduct(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("name");
-        List<Product> list = productService.findByName(name);
-        request.setAttribute("listProducts",list);
-        try {
-            request.getRequestDispatcher("/view/product/find.jsp").forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -178,21 +173,21 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Product product = this.productService.findById(id);
-        RequestDispatcher dispatcher;
-        if (product == null) {
-            dispatcher = request.getRequestDispatcher("error-404.jsp");
-        } else {
-            this.productService.remove(id);
-            try {
-                response.sendRedirect("/product");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        Product product = this.productService.findById(id);
+//        RequestDispatcher dispatcher;
+//        if (product == null) {
+//            dispatcher = request.getRequestDispatcher("error-404.jsp");
+//        } else {
+//            this.productService.remove(id);
+//            try {
+//                response.sendRedirect("/product");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
     private void save(HttpServletRequest request, HttpServletResponse response) {
             int id = Integer.parseInt(request.getParameter("id"));
