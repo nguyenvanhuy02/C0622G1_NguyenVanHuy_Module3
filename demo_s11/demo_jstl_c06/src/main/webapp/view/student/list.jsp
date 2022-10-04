@@ -62,7 +62,7 @@
 
             <td>${student.getEmail()}</td>
             <td><button class="btn btn-primary">Edit</button></td>
-            <td><button class="btn btn-danger">Delete</button></td>
+            <td><a href="/student?action=delete&id=${student.id}" class="btn btn-primary">Delete</a></td>
         </tr>
     </c:forEach>
 

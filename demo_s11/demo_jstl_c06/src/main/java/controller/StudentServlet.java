@@ -38,17 +38,21 @@ public class StudentServlet extends HttpServlet {
     }
 
     private void save(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
+//        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         boolean gender = Boolean.parseBoolean(request.getParameter("gender"));
         String birthday = request.getParameter("birthday");
         String email = request.getParameter("email");
         int point = Integer.parseInt(request.getParameter("point"));
         int classId = Integer.parseInt(request.getParameter("classId"));
-        String account = request.getParameter("account");
-        Student student = new Student(id,name,gender,birthday,point,account,classId,email);
-        studentService.add(student);
-        request.setAttribute("mess", "Them moi Thanh Cong");
+//        String account = request.getParameter("account");
+        Student students = new Student(name,gender,birthday,point,email,classId,email);
+        boolean check = studentService.add(students);
+        String mess = "them moi thanh cong";
+        if (!check){
+            mess = "them moi khong thanh cong";
+        }
+        request.setAttribute("mess",mess);
         showAddForm(request,response);
 
     }
@@ -65,13 +69,28 @@ public class StudentServlet extends HttpServlet {
                 // thêm mới
                 break;
             case "delete":
-                // xoá
+                deletStudent(request,response);
                 break;
             default:
                 // hiện thị list
                 showListStudent(request, response);
         }
 
+    }
+
+    private void deletStudent(HttpServletRequest request, HttpServletResponse response) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            studentService.delete(id);
+
+            List<Student> list = studentService.findAll();
+            request.setAttribute("studentList",list);
+        try {
+            request.getRequestDispatcher("/view/student/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) {

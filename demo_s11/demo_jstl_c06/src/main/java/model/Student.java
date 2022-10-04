@@ -13,6 +13,16 @@ public class Student {
     public Student() {
     }
 
+    public Student(String name, boolean gender, String birthday, int point, String account, int classId, String email) {
+        this.name = name;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.point = point;
+        this.account = account;
+        this.classId = classId;
+        this.email = email;
+    }
+
     public Student(int id, String name, boolean gender, String birthday, int point, String account, int classId, String email) {
         this.id = id;
         this.name = name;

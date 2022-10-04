@@ -20,14 +20,14 @@ public class StudentService  implements IStudentService {
     }
 
     @Override
-    public void add(Student student) {
+    public boolean add(Student student) {
         // validae dữ liệu
         // lưu và db
-         studentRepository.add(student);
+        return studentRepository.add(student);
     }
 
     @Override
-    public void delete(int id) {
-
+    public boolean delete(int id) {
+        return studentRepository.delete(id);
     }
 }

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-    private static final String URL ="jdbc:mysql://localhost:3306/c0622g1"; // sửa lại tên của csdl
+    private static final String URL ="jdbc:mysql://localhost:3306/demo_c0622g1"; // sửa lại tên của csdl
     private static final String USER ="root";// mặc định của mysql
     private static final String PASS ="12345678";// do cài đặt khi cài đặt mysql
     public static Connection getConnectDB(){
