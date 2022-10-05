@@ -22,7 +22,8 @@
     </h2>
     <h1>Search Country</h1>
     <h2>
-        <form action="/users?action=search" method="post" >
+        <form action="/users"  >
+            <input type="hidden" name="action" value="search">
                 Country : <input type="text" name="country">
                 <input type="submit" value="Search">
         </form>

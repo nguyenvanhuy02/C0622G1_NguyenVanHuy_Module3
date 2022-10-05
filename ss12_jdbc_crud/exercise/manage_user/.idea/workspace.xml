@@ -124,13 +124,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/impl/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/impl/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/manage_user-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/manage_user-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/IUserRepostitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/impl/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/IUserServiec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/UserServiec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/user/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,8 +170,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ss11_mvc_model/exercise/create_product_management_application" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -287,6 +290,7 @@
       <workItem from="1664844599122" duration="11000" />
       <workItem from="1664847139238" duration="141000" />
       <workItem from="1664847340701" duration="4474000" />
+      <workItem from="1664932649298" duration="1230000" />
     </task>
     <servers />
   </component>
