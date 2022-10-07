@@ -41,10 +41,9 @@
                                 Employee
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="/employee">Danh sách nhân viên</a></li>
+                                <li><a class="dropdown-item" href="/employee?action=add">Thêm Mới nhân viên</a></li>
+                                <li><a class="dropdown-item" href="#">Chỉnh sửa nhân viên</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -52,10 +51,9 @@
                                 Cusomer
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="/customer">Danh sách khách hàng</a></li>
+                                <li><a class="dropdown-item" href="/customer?action=add">Thêm mới khách hàng</a></li>
+                                <li><a class="dropdown-item" href="/customer?action=edit">Chỉnh sửa khách hàng</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -95,30 +93,6 @@
             <ul style="list-style: none">
                 <li>
                     <div class="card" style="width: 18rem;">
-                    <img src="/img/img_furama.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                </li>
-                <li>
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/img_furama.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card" style="width: 18rem;">
-                        <img src="/img/img_furama.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card" style="width: 18rem;">
                         <img src="/img/img_furama.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -143,13 +117,46 @@
                 </li>
             </ul>
         </div>
-        <div class="col-9">
-
+        <div class="col-9" >
+            <div class="row container-fluid" >
+                <div>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/img/cover_furama_1.jpg" class="d-block w-100 " style="height: 450px;"  alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/img/cover_furama_5.jpg" class="d-block w-100 " style="height: 450px;" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/img/cover_furama_3.jpg" class="d-block w-100 " style="height: 450px;" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-fluid">
+                <h3 class="text-center">
+                    KHU NGHỈ DƯỠNG ĐẲNG CẤP THẾ GIỚI, FURAMA ĐÀ NẴNG, NỔI TIẾNG LÀ KHU NGHỈ DƯỠNG ẨM THỰC TẠI VIỆT NAM.
+                </h3>
+                <p class="text-center fw-bold">
+                    Hướng ra bãi biển Đà Nẵng trải dài cát trắng, Furama Resort Đà Nẵng là cửa ngõ đến với 3 di sản văn hoá thế giới: Hội An (20 phút), Mỹ Sơn (90 phút) và Huế (2 tiếng. 196 phòng hạng sang cùng với 70 căn biệt thự từ hai đến bốn phòng ngủ có hồ bơi riêng đều được trang trí trang nhã, theo phong cách thiết kế truyền thống của Việt Nam và kiến trúc thuộc địa của Pháp, biến Furama thành khu nghỉ dưỡng danh giá nhất tại Việt Nam – vinh dự được đón tiếp nhiều người nổi tiếng, giới hoàng gia, chính khách, ngôi sao điện ảnh và các nhà lãnh đạo kinh doanh quốc tế.
+                </p>
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/IjlT_4mvd-c" title="YouTube video" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
-
-
     </div>
-
+    <div class="footer bg-dark" style="height: 100px">Huy Huy Huy Huy Huy</div>
 
 </div>
 
