@@ -17,7 +17,7 @@
 <h1 class="text-center">
     Trang danh sách nhân viên
 </h1>
-<a href="../view/home.jsp" class="btn btn-primary">Quay lại trang list</a>
+<a href="../view/home.jsp" class="btn btn-primary">Quay lại trang chủ</a>
 
 <form class="row g-3 d-fex justify-content-end" action="/employee" method="get">
     <input type="text" name="action" value="search" hidden>
@@ -36,13 +36,13 @@
         <th>Name</th>
         <th>Date_Of_Birth</th>
         <th>ID_Card</th>
+        <th>Salary</th>
         <th>Phone</th>
         <th>Email</th>
         <th>Address</th>
-        <th>Education_Degree</th>
         <th>Position</th>
+        <th>Education_Degree</th>
         <th>Division</th>
-        <th>Salary</th>
         <th>usname</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -60,9 +60,39 @@
             <td>${employee.getPhoneNumber()}</td>
             <td>${employee.getEmail()}</td>
             <td>${employee.getAddress()}</td>
-            <td>${employee.getPositionId()}</td>
-            <td>${employee.getEducationDegreeId()}</td>
-            <td>${employee.getDivisionId()}</td>
+            <c:if test="${employee.getPositionId() == 1}">
+                <td>Quản lý</td>
+            </c:if>
+            <c:if test="${employee.getPositionId() == 2}">
+                <td>Nhân viên</td>
+            </c:if>
+
+            <c:if test="${employee.getEducationDegreeId() == 1}">
+                <td>Trung cấp</td>
+            </c:if>
+            <c:if test="${employee.getEducationDegreeId() == 2}">
+                <td>Cao đẳng</td>
+            </c:if>
+            <c:if test="${employee.getEducationDegreeId() == 3}">
+                <td>Đại học</td>
+            </c:if>
+            <c:if test="${employee.getEducationDegreeId() == 4}">
+                <td>Sau đại học</td>
+            </c:if>
+
+            <c:if test="${employee.getDivisionId() == 1}">
+                <td>Sale-Marketing</td>
+            </c:if>
+            <c:if test="${employee.getDivisionId() == 2}">
+                <td>Hành chính</td>
+            </c:if>
+            <c:if test="${employee.getDivisionId() == 3}">
+                <td>Phục vụ</td>
+            </c:if>
+            <c:if test="${employee.getDivisionId() == 4}">
+                <td>Quản lý</td>
+            </c:if>
+
             <td>${employee.getUsername()}</td>
 
 <%--            <td><a href="/customer?action=edit&id=${employee.getId()}" class="btn btn-primary">Chỉnh sửa</a></td>--%>

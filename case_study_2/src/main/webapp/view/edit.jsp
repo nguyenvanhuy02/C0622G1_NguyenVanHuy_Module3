@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>Chỉnh sửa thông tin khách hàng</h1>
-<a href="/customer" class="btn btn-primary">Quay lại trang list</a>
+<a href="/customer" class="btn btn-primary">Quay lại trang chủ</a>
 <form action="/customer?action=edit" method="post">
     <fieldset>
         <legend>Thông tin sản phẩm</legend>

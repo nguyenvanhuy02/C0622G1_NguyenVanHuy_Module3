@@ -17,7 +17,7 @@
 <h1 class="text-center">
     Trang danh sách khách hàng
 </h1>
-<a href="../view/home.jsp" class="btn btn-primary">Quay lại trang list</a>
+<a href="../view/home.jsp" class="btn btn-primary">Quay lại trang chủ</a>
 
 <form class="row g-3 d-fex justify-content-end" action="/customer" method="get">
     <input type="text" name="action" value="search" hidden>

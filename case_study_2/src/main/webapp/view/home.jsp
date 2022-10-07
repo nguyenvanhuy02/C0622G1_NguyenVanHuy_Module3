@@ -43,7 +43,6 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/employee">Danh sách nhân viên</a></li>
                                 <li><a class="dropdown-item" href="/employee?action=add">Thêm Mới nhân viên</a></li>
-                                <li><a class="dropdown-item" href="#">Chỉnh sửa nhân viên</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -53,18 +52,15 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/customer">Danh sách khách hàng</a></li>
                                 <li><a class="dropdown-item" href="/customer?action=add">Thêm mới khách hàng</a></li>
-                                <li><a class="dropdown-item" href="/customer?action=edit">Chỉnh sửa khách hàng</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarService" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Service
+                                Facility
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Danh sách dịch vụ</a></li>
+                                <li><a class="dropdown-item" href="#">Thêm mới dịch vụ</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -72,10 +68,8 @@
                                 Contract
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Danh sách hợp đồng</a></li>
+                                <li><a class="dropdown-item" href="#">Thêm mới hợp đồng</a></li>
                             </ul>
                         </li>
                     </ul>

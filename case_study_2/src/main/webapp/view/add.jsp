@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>Thêm mới danh sách khách hàng</h1>
-<a href="../view/home.jsp">Quay lại trang list</a>
+<a href="../view/home.jsp">Quay lại trang chủ</a>
 <c:if test="${mess!=null}">
     <span>${mess}</span>
 </c:if>
