@@ -19,7 +19,7 @@
 </h1>
 <a href="../view/home.jsp" class="btn btn-primary">Quay lại trang list</a>
 
-<form class="row g-3 d-fex justify-content-end" action="/customer" method="get">
+<form class="row g-3 d-fex justify-content-end" action="/employee" method="get">
     <input type="text" name="action" value="search" hidden>
     <div class="col-auto">
         <input type="text" name="searchName" class="form-control" placeholder="Name">
@@ -133,18 +133,15 @@
                                                 <td>Username: </td>
                                                 <td><input type="text" name="username" id="username" value="${employee.getUsername()}"></td>
                                             </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td><input type="submit" value="Chỉnh sửa"></td>
-                                            </tr>
+
 
                                         </table>
                                     </fieldset>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                                        <button class="btn btn-secondary" data-bs-dismiss="modal" >Chỉnh sửa</button>
+                                    </div>
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
-                                <a href="/employee?action=edit&id=${employee.getId()}" class="btn btn-secondary" >Chỉnh sửa</a>
                             </div>
                         </div>
                     </div>
@@ -153,16 +150,16 @@
             </td>
             <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${customer.id}">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal${employee.id}">
                     Xoá
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal${customer.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="deleteModal${employee.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel" style="color: #000">Xoá khách hàng</h5>
+                                <h5 class="modal-title" id="exampleModalLabel" style="color: #000">Xoá nhân viên</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body" style="color: #000" >
@@ -170,7 +167,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
-                                <a href="/customer?action=delete&id=${customer.getId()}" class="btn btn-secondary" >Xoá</a>
+                                <a href="/employee?action=delete&id=${employee.getId()}" class="btn btn-secondary" >Xoá</a>
                             </div>
                         </div>
                     </div>

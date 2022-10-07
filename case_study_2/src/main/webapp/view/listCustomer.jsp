@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../bootstrap/bootstrap-5.0.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../bootstrap/datatables/css/dataTables.bootstrap5.css">
 </head>
-<body background="/img/cover_furama_1.jpg" >
+<body background="/img/cover_furama_1.jpg" style="background-size: cover" >
 <h1 class="text-center">
     Trang danh sách khách hàng
 </h1>

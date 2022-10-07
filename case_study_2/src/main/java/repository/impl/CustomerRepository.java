@@ -27,7 +27,7 @@ public class CustomerRepository implements ICustomerRepository {
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()){
             int id = resultSet.getInt("id");
-            int id_customer_type = resultSet.getInt("customer_type_id");
+            int customer_type_id = resultSet.getInt("customer_type_id");
             String name = resultSet.getString("name");
             String date_of_birth = resultSet.getString("date_of_birth");
             boolean gender = resultSet.getBoolean("gender");
@@ -35,7 +35,7 @@ public class CustomerRepository implements ICustomerRepository {
             String phone_number = resultSet.getString("phone_number");
             String email = resultSet.getString("email");
             String address = resultSet.getString("address");
-            Customer customer = new Customer(id,id_customer_type,name,date_of_birth,gender,id_card,phone_number,email,address);
+            Customer customer = new Customer(id, customer_type_id,name, date_of_birth,gender, id_card,phone_number,email,address);
             customerList.add(customer);
             }
         } catch (SQLException e) {

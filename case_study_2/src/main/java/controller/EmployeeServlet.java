@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "EmployeeServlet", value = "/employee")
 public class EmployeeServlet extends HttpServlet {
@@ -26,15 +27,43 @@ public class EmployeeServlet extends HttpServlet {
             case "edit":
                 editEmployee(request,response);
                 break;
-//            case "delete":
-//                deleteCustomer(request,response);
-//                break;
-//            case "search":
-//                searchCustomer(request,response);
-//                break;
+            case "delete":
+                deleteEmployee(request,response);
+                break;
+            case "search":
+                searchEmployee(request,response);
+                break;
             default:
                 showListEmployee(request,response);
                 break;
+        }
+    }
+
+    private void searchEmployee(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("searchName");
+        List<Employee> list = employeeService.search(name == null ? "" : name);
+        request.setAttribute("listEmployee",list);
+        try {
+            request.getRequestDispatcher("/view/employee/listEmployee.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        employeeService.delete(id);
+
+        List<Employee> list = employeeService.finAll();
+        request.setAttribute("listEmployee",list);
+        try {
+            request.getRequestDispatcher("/view/employee/listEmployee.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -98,7 +127,6 @@ public class EmployeeServlet extends HttpServlet {
 //                searchCustomer(request,response);
 //                break;
             default:
-                showListEmployee(request,response);
                 break;
         }
     }

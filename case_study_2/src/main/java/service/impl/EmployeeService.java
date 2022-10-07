@@ -31,11 +31,11 @@ public class EmployeeService implements IEmployeeSevice {
 
     @Override
     public boolean delete(int id) {
-        return false;
+        return employeeRepository.delete(id);
     }
 
     @Override
-    public List<Employee> search(String name) {
-        return null;
+    public List<Employee> search(String searchName) {
+        return employeeRepository.search("%" + searchName + "%");
     }
 }

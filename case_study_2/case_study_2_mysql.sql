@@ -68,19 +68,19 @@ phone_number varchar(45),
 email varchar(45),
 address varchar(45),
 position_id int,
-foreign key (position_id) references `position`(id) ON DELETE CASCADE,
+foreign key (position_id) references `position`(id) ON DELETE set null,
 education_degree_id int,
-foreign key (education_degree_id) references education_degree(id) ON DELETE CASCADE,
+foreign key (education_degree_id) references education_degree(id) ON DELETE set null,
 division_id int,
-foreign key (division_id) references division(id) ON DELETE CASCADE,
+foreign key (division_id) references division(id) ON DELETE set null,
 username varchar(255),
-foreign key (username) references user(username) ON DELETE CASCADE
+foreign key (username) references user(username) ON DELETE set null
 );
 
 create table customer(
 id int primary key auto_increment,
 customer_type_id int,
-foreign key (customer_type_id) references customer_type(id) ON DELETE CASCADE,
+foreign key (customer_type_id) references customer_type(id) ON DELETE set null,
 name varchar(45),
 date_of_birth date,
 gender bit(1),
@@ -97,9 +97,9 @@ area int,
 cost double,
 max_people int,
 rent_type_id int,
-foreign key (rent_type_id) references rent_type(id) ON DELETE CASCADE,
+foreign key (rent_type_id) references rent_type(id) ON DELETE set null,
 facility_type_id int,
-foreign key (facility_type_id) references facility_type(id) ON DELETE CASCADE,
+foreign key (facility_type_id) references facility_type(id) ON DELETE set null,
 standard_room varchar(45),
 description_other_convenience varchar(45),
 pool_area double,
@@ -113,19 +113,19 @@ start_date datetime,
 end_date datetime,
 deposit double,
 employee_id int,
-foreign key (employee_id) references employee(id) ON DELETE CASCADE,
+foreign key (employee_id) references employee(id) ON DELETE set null,
 customer_id int,
-foreign key (customer_id) references customer(id) ON DELETE CASCADE,
+foreign key (customer_id) references customer(id) ON DELETE set null,
 facility_id int,
-foreign key (facility_id) references facility(id) ON DELETE CASCADE
+foreign key (facility_id) references facility(id) ON DELETE set null
 );
 
 create table contract_detail(
 id int primary key auto_increment,
 contract_id int,
-foreign key (contract_id) references contract(id) ON DELETE CASCADE,
+foreign key (contract_id) references contract(id) ON DELETE set null, 
 attach_facility_id int,
-foreign key (attach_facility_id) references attach_facility(id) ON DELETE CASCADE,
+foreign key (attach_facility_id) references attach_facility(id) ON DELETE set null,
 quantity int
 );
 
@@ -216,15 +216,17 @@ insert into contract_detail
                        (8,12,2,2);
                        
 
-insert into customer(customer_type_id, name,date_of_birth,gender,id_card,phone_number,email,address) 
-			values(1, "Nguyễn Văn MAO aaaaa","2003-10-11",1,"1230120","0123456789","mao@gmail.com","Đà nẵng ");
-update customer set name = "Nguyễn Mao mao" where id = 12;       
- 
+-- insert into customer(customer_type_id, name,date_of_birth,gender,id_card,phone_number,email,address) 
+-- 			values(1, "Nguyễn Văn MAO aaaaa","2003-10-11",1,"1230120","0123456789","mao@gmail.com","Đà nẵng ");
+-- update customer set name = "Nguyễn Mao mao" where id = 12;       
+--  
 
-select * from customer where name like "%Nghệ%";
-SELECT * FROM employee;
+-- select * from customer where name like "%Nghệ%";
+-- SELECT * FROM employee;
 
-insert into employee(name , date_of_birth, id_card, salary,phone_number , email,address , position_id,education_degree_id , division_id,username)
-			values("huy","1990-10-10","012514","10000000","02021505","mao@gmail.com","Việt Nam",1,1,2,"taikhoan123");
+-- insert into employee(name , date_of_birth, id_card, salary,phone_number , email,address , position_id,education_degree_id , division_id,username)
+-- 			values("huy","1990-10-10","012514","10000000","02021505","mao@gmail.com","Việt Nam",1,1,2,"taikhoan123");
 
 select * from employee where id = 1;
+
+update employee set  name = "Nguyễn Văn An Vương" where id = ?;
