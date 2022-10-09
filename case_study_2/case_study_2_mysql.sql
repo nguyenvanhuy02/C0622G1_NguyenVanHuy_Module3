@@ -239,10 +239,11 @@ insert into contract_detail
 -- from employee 
 -- left join division 
 -- on employee.division_id = division.id 
--- where employee.name like "%Toản" and employee.email like "toan0404@gmail.com" and division.name like "Quản lý";
+-- where employee.name like "%Toản" and division.name like "Quản lý";
 
 -- select * from facility; 
 -- insert into facility(name,area,cost,max_people,rent_type_id,facility_type_id,standard_room,description_other_convenience,pool_area,number_of_floors,facility_free)
 -- values("House Princess 01",14000,5000000,7,2,2,"vip", "Có thêm bếp nướng", null,3, "null");
 
-update facility set name = "Mao mao " where id = 1;
+-- update facility set name = "Mao mao " where id = 1;
+select * from division;

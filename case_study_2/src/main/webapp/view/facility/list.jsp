@@ -89,7 +89,112 @@
                     </div>
                 </div>
             </td>
-            <td><button>Delete</button></td>
+
+
+<%--            <td>--%>
+<%--                <!-- Button trigger modal -->--%>
+<%--                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${facility.id}">--%>
+<%--                    Chỉnh sửa--%>
+<%--                </button>--%>
+
+<%--                <!-- Modal -->--%>
+<%--                <div class="modal fade" id="exampleModal${facility.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--%>
+<%--                    <div class="modal-dialog">--%>
+<%--                        <div class="modal-content">--%>
+<%--                            <div class="modal-header">--%>
+<%--                                <h5 class="modal-title" id="exampleModalLabel1" style="color: #000">Chỉnh sửa nhân viên</h5>--%>
+<%--                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
+<%--                            </div>--%>
+<%--                            <div class="modal-body" style="color: #000" >--%>
+<%--                                <form action="/facility?action=edit" method="post">--%>
+<%--                                    <fieldset>--%>
+<%--                                        <legend>Thông tin dịch vụ</legend>--%>
+<%--                                        <table>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="name" id="name" value="${facility.getName()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="area" id="area" value="${facility.getArea()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="cost" id="cost" value="${facility.getCost()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="maxPeople" id="maxPeople" value="${facility.getMaxPeople()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="rentTypeId" id="rentTypeId" value="${facility.getRentTypeId()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="facilityTypeId" id="facilityTypeId" value="${facility.getFacilityTypeId()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="standardRoom" id="standardRoom" value="${facility.getStandardRoom()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="descriptionOtherConvenience" id="descriptionOtherConvenience" value="${facility.getDescriptionOtherConvenience()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="poolArea" id="poolArea" value="${facility.getPoolArea()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="numberOfFloors" id="numberOfFloors" value="${facility.getNumberOfFloors()}"></td>--%>
+<%--                                            </tr>--%>
+<%--                                            <tr>--%>
+<%--                                                <td>Name: </td>--%>
+<%--                                                <td><input type="text" name="facilityFree" id="facilityFree" value="${facility.getFacilityFree()}"></td>--%>
+<%--                                            </tr>--%>
+
+<%--                                        </table>--%>
+<%--                                    </fieldset>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>--%>
+<%--                                        <button class="btn btn-secondary" data-bs-dismiss="modal" >Chỉnh sửa</button>--%>
+<%--                                    </div>--%>
+<%--                                </form>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+
+<%--            </td>--%>
+            <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal${facility.id}">
+                    Xoá
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal${facility.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="color: #000">Xoá nhân viên</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="color: #000" >
+                                Bạn có muốn xoá không ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                                <a href="/facility?action=delete&id=${facility.getId()}" class="btn btn-secondary" >Xoá</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+<%--            <td><button>Delete</button></td>--%>
         </tr>
     </c:forEach>
     </tbody>

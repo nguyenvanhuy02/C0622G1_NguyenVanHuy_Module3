@@ -1,5 +1,6 @@
 package controller;
 
+import model.Employee;
 import model.Facility;
 import service.IFacilityService;
 import service.impl.FacilityService;
@@ -26,9 +27,27 @@ public class FacilityServlet extends HttpServlet {
             case "edit":
                 editFacility(request,response);
                 break;
+            case "delete":
+                deleteFacility(request,response);
+                break;
             default:
                 showList(request,response);
                 break;
+        }
+    }
+
+    private void deleteFacility(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        facilityService.delete(id);
+
+        List<Facility> list = facilityService.findAll();
+        request.setAttribute("listFacility",list);
+        try {
+            request.getRequestDispatcher("/view/facility/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

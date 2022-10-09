@@ -18,17 +18,20 @@
     <p style="color: red">${mess}</p>
 </c:if>
 <form action="/employee?action=add" method="post">
-    <pre>ID:                            <input type="text" name="id" ></pre>
+<%--    <pre>ID:                            <input type="text" name="id" ></pre>   --%>
     <pre>Name:                          <input type="text" name="name"></pre>
     <c:if test="${map.get('name')!=null}">
         <span style="color: red">${map.get('name')}</span>
     </c:if>
-    <pre>Brithday:                      <input type="date" name="dateOfBirth"></pre>
+    <pre>Birthday:                      <input type="date" name="dateOfBirth"></pre>
     <pre>Id Card:                       <input type="text" name="idCard"></pre>
     <c:if test="${map.get('idCard')!=null}">
         <span style="color: red">${map.get('idCard')}</span>
     </c:if>
     <pre>Salary:                       <input type="text" name="salary"></pre>
+    <c:if test="${map.get('salary')!=null}">
+        <span style="color: red">${map.get('salary')}</span>
+    </c:if>
     <pre>Phone Number:                 <input type="text" name="phoneNumber"></pre>
     <c:if test="${map.get('phoneNumber')!=null}">
         <span style="color: red">${map.get('phoneNumber')}</span>

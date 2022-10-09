@@ -17,6 +17,7 @@ public class FacilityRepository implements IFacilityRepository {
             "values(?,?,?,?,?,?,?,?,?,?,?);";
     private final String FIND_BY_ID = "select * from facility where id=?";
     private final String UPDATE_FACILITY = "update facility set name = ? , area = ? , cost = ? , max_people=?, rent_type_id=?,facility_type_id =?, standard_room=?, description_other_convenience=?, pool_area=?,number_of_floors =?, facility_free=? where id = ?";
+    private final String DELETE_BY_ID = "delete from facility where id = ? ;";
     @Override
     public List<Facility> findAll() {
         List<Facility> list = new ArrayList<>();
@@ -25,8 +26,9 @@ public class FacilityRepository implements IFacilityRepository {
             PreparedStatement ps = connection.prepareStatement(SELECT_FACILITY);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()){
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                int area = resultSet.getInt("id");
+                int area = resultSet.getInt("area");
                 double cost = resultSet.getDouble("cost");
                 int maxPeople = resultSet.getInt("max_people");
                 int rentTypeID = resultSet.getInt("rent_type_id");
@@ -36,7 +38,7 @@ public class FacilityRepository implements IFacilityRepository {
                 double poolArea = resultSet.getDouble("pool_area");
                 int numberOfFloors = resultSet.getInt("number_of_floors");
                 String facilityFree = resultSet.getString("facility_free");
-                Facility facility = new Facility(name,area,cost,maxPeople,rentTypeID,facilityTypeId,standardRoom,descriptionOtherConvenience,poolArea,numberOfFloors,facilityFree);
+                Facility facility = new Facility(id,name,area,cost,maxPeople,rentTypeID,facilityTypeId,standardRoom,descriptionOtherConvenience,poolArea,numberOfFloors,facilityFree);
                 list.add(facility);
             }
         } catch (SQLException e) {
@@ -121,5 +123,19 @@ public class FacilityRepository implements IFacilityRepository {
             e.printStackTrace();
         }
         return rowUpdat;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        Boolean rowDelete = null;
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID);
+            ps.setInt(1,id);
+            rowDelete = ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rowDelete;
     }
 }

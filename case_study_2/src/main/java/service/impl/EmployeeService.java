@@ -48,6 +48,7 @@ public class EmployeeService implements IEmployeeSevice {
         else if (!Validation.checkPhone(employee.getPhoneNumber())){
             errorMap.put("phoneNumber","Số điện thoại không đúng định dạng");
         }
+
         if (errorMap.size()==0){
             boolean check= employeeRepository.add(employee);
         }
