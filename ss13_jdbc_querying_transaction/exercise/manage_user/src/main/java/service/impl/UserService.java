@@ -5,7 +5,9 @@ import repository.UserRepository;
 import service.IUserService;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserService implements IUserService {
     private UserRepository UserRepository = new repository.impl.UserRepository();
@@ -13,6 +15,18 @@ public class UserService implements IUserService {
     public void insertUser(User user) throws SQLException {
         UserRepository.insertUser(user);
     }
+
+//    @Override
+//    public Map<String, String> insertUser(User user) throws SQLException {
+//        Map<String,String> errorMap = new HashMap<>();
+//        if ("".equals(user.getEmail())) {
+//            errorMap.put("email", "Email không được để trống!!");
+//        }
+//        if (errorMap.size()==0){
+//            boolean check= UserRepository.insertUser(user);
+//        }
+//        return null;
+//    }
 
     @Override
     public User selectUser(int id) {

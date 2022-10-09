@@ -227,6 +227,22 @@ insert into contract_detail
 -- insert into employee(name , date_of_birth, id_card, salary,phone_number , email,address , position_id,education_degree_id , division_id,username)
 -- 			values("huy","1990-10-10","012514","10000000","02021505","mao@gmail.com","Việt Nam",1,1,2,"taikhoan123");
 
-select * from employee where id = 1;
+-- select * from employee where id = 1;
 
-update employee set  name = "Nguyễn Văn An Vương" where id = ?;
+-- update employee set  name = "Nguyễn Văn An Vương" where id = ?;
+
+-- select * from employee; 
+
+
+
+-- select employee.*,division.name as class_name 
+-- from employee 
+-- left join division 
+-- on employee.division_id = division.id 
+-- where employee.name like "%Toản" and employee.email like "toan0404@gmail.com" and division.name like "Quản lý";
+
+-- select * from facility; 
+-- insert into facility(name,area,cost,max_people,rent_type_id,facility_type_id,standard_room,description_other_convenience,pool_area,number_of_floors,facility_free)
+-- values("House Princess 01",14000,5000000,7,2,2,"vip", "Có thêm bếp nướng", null,3, "null");
+
+update facility set name = "Mao mao " where id = 1;

@@ -18,7 +18,7 @@
         <div class="col-3 header">
             <span>
                 <a class="navbar-brand" href="#">
-                    <img src="/img/logo_furama.png" alt="" width="100" height="100">
+                    <img src="/img/logo.png" alt="" width="100" height="100" style="border-radius: 50%">
                 </a>
             </span>
         </div>
@@ -59,8 +59,8 @@
                                 Facility
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Danh sách dịch vụ</a></li>
-                                <li><a class="dropdown-item" href="#">Thêm mới dịch vụ</a></li>
+                                <li><a class="dropdown-item" href="/facility">Danh sách dịch vụ</a></li>
+                                <li><a class="dropdown-item" href="/facility?action=add">Thêm mới dịch vụ</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

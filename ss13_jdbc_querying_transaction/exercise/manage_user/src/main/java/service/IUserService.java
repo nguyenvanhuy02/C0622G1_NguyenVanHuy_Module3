@@ -4,9 +4,12 @@ import model.User;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public interface IUserService {
     void insertUser(User user) throws SQLException;
+
+//    Map<String,String> insertUser(User user) throws SQLException;
 
     User selectUser(int id);
 

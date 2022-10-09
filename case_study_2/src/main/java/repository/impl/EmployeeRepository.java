@@ -18,6 +18,11 @@ public class EmployeeRepository implements IEmployeeRepository {
     private final String UPDATE_EMPLOYEE = "update employee set name= ?,date_of_birth =?, id_card=?, salary=?, phone_number=?, email=?,address =?,position_id =?,education_degree_id =?, division_id=?, username=? where id = ?; ";
     private final String DELETE_BY_ID = "delete from employee where id = ? ;";
     private final String FIND_BY_NAME = "select * from employee where name like ?;";
+    private final String SEARCH = "select employee.*,division.name as class_name \n" +
+            "from employee \n" +
+            "left join division \n" +
+            "on employee.division_id = division.id \n" +
+            "where employee.name like ? and division.name like ?;";
     @Override
     public List<Employee> finAll() {
         List<Employee> employeeList = new ArrayList<>();
@@ -139,12 +144,13 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public List<Employee> search(String searchName) {
+    public List<Employee> search(String searchName, String searchDivision) {
         Connection connection = BaseRepository.getConnectDB();
         List<Employee> employeeList = new ArrayList<>();
         try {
-            PreparedStatement ps = connection.prepareStatement(FIND_BY_NAME);
+            PreparedStatement ps = connection.prepareStatement(SEARCH);
             ps.setString(1,searchName);
+            ps.setString(2,searchDivision);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
@@ -167,4 +173,34 @@ public class EmployeeRepository implements IEmployeeRepository {
         }
         return employeeList;
     }
+
+//    @Override
+//    public List<Employee> search(String searchName ) {
+//        Connection connection = BaseRepository.getConnectDB();
+//        List<Employee> employeeList = new ArrayList<>();
+//        try {
+//            PreparedStatement ps = connection.prepareStatement(FIND_BY_NAME);
+//            ps.setString(1,searchName);
+//            ResultSet resultSet = ps.executeQuery();
+//            while (resultSet.next()){
+//                int id = resultSet.getInt("id");
+//                String name = resultSet.getString("name");
+//                String birthday = resultSet.getString("date_of_birth");
+//                String idCard = resultSet.getString("id_card");
+//                double salary = resultSet.getDouble("salary");
+//                String phoneNumber = resultSet.getString("phone_number");
+//                String email = resultSet.getString("email");
+//                String address = resultSet.getString("address");
+//                int positionId =  resultSet.getInt("position_id");
+//                int educationDegreeId = resultSet.getInt("education_degree_id");
+//                int divisionId = resultSet.getInt("division_id");
+//                String username = resultSet.getString("username");
+//                Employee employee = new Employee(id,name,birthday,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,username);
+//                employeeList.add(employee);
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return employeeList;
+//    }
 }

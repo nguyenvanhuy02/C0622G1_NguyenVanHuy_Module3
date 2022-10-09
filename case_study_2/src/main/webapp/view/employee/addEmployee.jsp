@@ -11,25 +11,37 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<body background="/img/cover_furama_1.jpg" >
 <h1>Thêm mới danh sách nhân viên</h1>
 <a href="../view/home.jsp">Quay lại trang list</a>
 <c:if test="${mess!=null}">
-    <span>${mess}</span>
+    <p style="color: red">${mess}</p>
 </c:if>
 <form action="/employee?action=add" method="post">
-    <pre>ID:                            <input type="text" name="id"></pre>
+    <pre>ID:                            <input type="text" name="id" ></pre>
     <pre>Name:                          <input type="text" name="name"></pre>
+    <c:if test="${map.get('name')!=null}">
+        <span style="color: red">${map.get('name')}</span>
+    </c:if>
     <pre>Brithday:                      <input type="date" name="dateOfBirth"></pre>
     <pre>Id Card:                       <input type="text" name="idCard"></pre>
+    <c:if test="${map.get('idCard')!=null}">
+        <span style="color: red">${map.get('idCard')}</span>
+    </c:if>
     <pre>Salary:                       <input type="text" name="salary"></pre>
-    <pre>Phone Number:                  <input type="text" name="phoneNumber"></pre>
+    <pre>Phone Number:                 <input type="text" name="phoneNumber"></pre>
+    <c:if test="${map.get('phoneNumber')!=null}">
+        <span style="color: red">${map.get('phoneNumber')}</span>
+    </c:if>
     <pre>Email:                         <input type="text" name="email"></pre>
+    <c:if test="${map.get('email')!=null}">
+        <span style="color: red">${map.get('email')}</span>
+    </c:if>
     <pre>Address:                       <input type="text" name="address"></pre>
-    <pre>Position Id:                       <input type="text" name="positionId"></pre>
-    <pre>Education Degree Id:                       <input type="text" name="educationDegreeId"></pre>
-    <pre>Division Id:                       <input type="text" name="divisionId"></pre>
-    <pre>Username:                       <input type="text" name="username"></pre>
+    <pre>Position Id:                   <input type="text" name="positionId"></pre>
+    <pre>Education Degree Id:           <input type="text" name="educationDegreeId"></pre>
+    <pre>Division Id:                   <input type="text" name="divisionId"></pre>
+    <pre>Username:                      <input type="text" name="username"></pre>
     <pre>                               <button>Save</button></pre>
 </form>
 </body>

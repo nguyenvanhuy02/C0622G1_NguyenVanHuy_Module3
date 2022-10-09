@@ -2,7 +2,9 @@ package controller;
 
 import model.Customer;
 import model.Employee;
+import service.IDivisionService;
 import service.IEmployeeSevice;
+import service.impl.DivisionService;
 import service.impl.EmployeeService;
 
 import javax.servlet.*;
@@ -10,10 +12,12 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "EmployeeServlet", value = "/employee")
 public class EmployeeServlet extends HttpServlet {
     private IEmployeeSevice employeeService = new EmployeeService();
+    private IDivisionService divisionService  = new DivisionService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -41,7 +45,9 @@ public class EmployeeServlet extends HttpServlet {
 
     private void searchEmployee(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("searchName");
-        List<Employee> list = employeeService.search(name == null ? "" : name);
+        String division = request.getParameter("searchDivision");
+        request.setAttribute("listDivision",divisionService.findAll());
+        List<Employee> list = employeeService.search(name ,division);
         request.setAttribute("listEmployee",list);
         try {
             request.getRequestDispatcher("/view/employee/listEmployee.jsp").forward(request,response);
@@ -51,6 +57,19 @@ public class EmployeeServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+//    private void searchEmployee(HttpServletRequest request, HttpServletResponse response) {
+//        String name = request.getParameter("searchName");
+//        List<Employee> list = employeeService.search(name == null ? "" : name);
+//        request.setAttribute("listEmployee",list);
+//        try {
+//            request.getRequestDispatcher("/view/employee/listEmployee.jsp").forward(request,response);
+//        } catch (ServletException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -120,12 +139,6 @@ public class EmployeeServlet extends HttpServlet {
             case "edit":
                 update(request,response);
                 break;
-//            case "delete":
-//                deleteCustomer(request,response);
-//                break;
-//            case "search":
-//                searchCustomer(request,response);
-//                break;
             default:
                 break;
         }
@@ -166,12 +179,13 @@ public class EmployeeServlet extends HttpServlet {
             int divisionId = Integer.parseInt(request.getParameter("divisionId"));
             String username = request.getParameter("username");
             Employee employee = new Employee(name,birthday,idCard,salary,phoneNumber,email,address,positionId,educationDegreeId,divisionId,username);
-            boolean check = employeeService.add(employee);
+            Map<String , String> map =employeeService.add(employee);
             String mess = "Thêm mới thành công !";
-            if (!check){
+            if (map.size()!=0){
                 mess = " thêm mới không thành công !";
+                request.setAttribute("map",map);
             }
             request.setAttribute("mess",mess);
-            showListEmployee(request,response);
+            addEmployee(request,response);
     }
 }

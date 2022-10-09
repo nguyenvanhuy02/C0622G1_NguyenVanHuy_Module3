@@ -4,8 +4,11 @@ import model.Employee;
 import repository.IEmployeeRepository;
 import repository.impl.EmployeeRepository;
 import service.IEmployeeSevice;
+import validation.Validation;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeService implements IEmployeeSevice {
     private IEmployeeRepository employeeRepository = new EmployeeRepository();
@@ -20,9 +23,37 @@ public class EmployeeService implements IEmployeeSevice {
     }
 
     @Override
-    public boolean add(Employee employee) {
-        return employeeRepository.add(employee);
+    public Map<String, String> add(Employee employee) {
+        Map<String , String> errorMap = new HashMap<>();
+        if ("".equals(employee.getEmail())){
+            errorMap.put("email","Email không để trống");
+        }else if (!Validation.checkEmail(employee.getEmail())){
+            errorMap.put("email","Email không đúng định dạng");
+        }
+        if ("".equals(employee.getName())){
+            errorMap.put("name","Tên không để trống!!");
+        }
+        else if (!Validation.checkName(employee.getName())){
+            errorMap.put("name","Tên không đúng định dạng!!");
+        }
+        if ("".equals(employee.getIdCard())){
+            errorMap.put("idCard","Id card không để trống!!");
+        }
+        else if(!Validation.checkIdCard(employee.getIdCard())){
+            errorMap.put("idCard","Id card không đúng định dạng");
+        }
+        if ("".equals(employee.getPhoneNumber())){
+            errorMap.put("phoneNumber","Số điện thoại không được để trống!!");
+        }
+        else if (!Validation.checkPhone(employee.getPhoneNumber())){
+            errorMap.put("phoneNumber","Số điện thoại không đúng định dạng");
+        }
+        if (errorMap.size()==0){
+            boolean check= employeeRepository.add(employee);
+        }
+        return errorMap;
     }
+
 
     @Override
     public boolean uppdate(Employee employee) {
@@ -35,7 +66,12 @@ public class EmployeeService implements IEmployeeSevice {
     }
 
     @Override
-    public List<Employee> search(String searchName) {
-        return employeeRepository.search("%" + searchName + "%");
+    public List<Employee> search(String searchName, String searchDivision) {
+        return employeeRepository.search(searchName,searchDivision);
     }
+
+//    @Override
+//    public List<Employee> search(String searchName) {
+//        return employeeRepository.search("%" + searchName + "%");
+//    }
 }

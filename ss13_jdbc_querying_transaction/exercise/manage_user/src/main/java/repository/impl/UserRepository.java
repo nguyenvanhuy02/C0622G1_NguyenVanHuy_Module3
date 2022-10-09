@@ -35,7 +35,7 @@ public class UserRepository implements repository.UserRepository {
         return connection;
     }
 
-    public void insertUser(User user) {
+    public boolean insertUser(User user) {
 
         String query = "{call insert_user(?,?,?)}";
 
@@ -49,6 +49,7 @@ public class UserRepository implements repository.UserRepository {
         } catch (SQLException e) {
             printSQLException(e);
         }
+        return false;
     }
 
     public User selectUser(int id) {

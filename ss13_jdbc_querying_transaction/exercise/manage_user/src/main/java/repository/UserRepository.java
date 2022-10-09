@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface UserRepository {
-    void insertUser(User user) throws SQLException;
+    boolean insertUser(User user) throws SQLException;
 
     User selectUser(int id);
 

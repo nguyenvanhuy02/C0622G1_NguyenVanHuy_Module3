@@ -12,6 +12,9 @@
     <title>User Management Application</title>
 </head>
 <body>
+<c:if test="${mess!=null}">
+    <p style="color: red">${mess}</p>
+</c:if>
 <center>
     <h1>User Management</h1>
     <h2>
@@ -35,6 +38,9 @@
                 <td>
                     <input type="text" name="email" id="email" size="45"/>
                 </td>
+                <c:if test="${map.get('email')!=null}">
+                    <span>${map.get('email')}</span>
+                </c:if>
             </tr>
             <tr>
                 <th>Country:</th>

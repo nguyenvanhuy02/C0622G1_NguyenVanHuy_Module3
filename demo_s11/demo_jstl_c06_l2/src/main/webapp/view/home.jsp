@@ -13,7 +13,7 @@
         <%@ include file="side-bar.jsp" %>
     </div>
     <div class="col-md-9 col-lg-10 min-vh-100 vh-100 navbar-nav-scroll" style="margin-top: 10px">
-        <a href="/student">Quản lý sinh viên</a>
+        <a href="/student" >Quản lý sinh viên</a>
     </div>
 
 </div>

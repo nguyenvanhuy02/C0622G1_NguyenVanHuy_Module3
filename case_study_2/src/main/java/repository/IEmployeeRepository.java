@@ -11,5 +11,6 @@ public interface IEmployeeRepository {
     boolean add(Employee employee);
     boolean uppdate(Employee employee);
     boolean delete(int id);
-    List<Employee> search(String searchName);
+//    List<Employee> search(String searchName);
+    List<Employee> search(String searchName , String searchDivision);
 }

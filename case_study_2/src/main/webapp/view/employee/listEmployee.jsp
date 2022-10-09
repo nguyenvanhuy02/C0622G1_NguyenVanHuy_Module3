@@ -25,6 +25,14 @@
         <input type="text" name="searchName" class="form-control" placeholder="Name">
     </div>
     <div class="col-auto">
+        <select class="form-select" name="searchDivision">
+            <option selected value="">Bộ phận...</option>
+            <c:forEach var="division" items="${listDivision}">
+                <option value="${division.name}">${division.name}</option>
+            </c:forEach>
+        </select>
+    </div>
+    <div class="col-auto">
         <button type="submit" class="btn btn-outline-primary mb-3">Search</button>
     </div>
 </form>
