@@ -67,6 +67,7 @@
                                 <form action="/facility?action=edit" method="post">
                                     <fieldset>
                                         <legend>Thông tin sản phẩm</legend>
+                                        <pre>Id:                            <input type="hidden" name="id" id="id" value="${facility.getId()}"></pre>
                                         <pre>Name:                          <input type="text" name="name" id="name" value="${facility.getName()}"></pre>
                                         <pre>Area:                          <input type="text" name="area" id="area" value="${facility.getArea()}"></pre>
                                         <pre>Cost:                          <input type="text" name="cost" id="cost" value="${facility.getCost()}"></pre>

@@ -105,6 +105,7 @@ public class FacilityServlet extends HttpServlet {
     }
 
     private void updateFacility(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -116,7 +117,7 @@ public class FacilityServlet extends HttpServlet {
         double poolArea = Double.parseDouble(request.getParameter("poolArea"));
         int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
         String facilityFree = request.getParameter("facilityFree");
-        Facility facility = new Facility(name,area,cost,maxPeople,rentTypeId,facilityTypeId,standardRoom,descriptionOtherConvenience,poolArea,numberOfFloors,facilityFree);
+        Facility facility = new Facility(id,name,area,cost,maxPeople,rentTypeId,facilityTypeId,standardRoom,descriptionOtherConvenience,poolArea,numberOfFloors,facilityFree);
         facilityService.update(facility);
         try {
             response.sendRedirect("/facility");

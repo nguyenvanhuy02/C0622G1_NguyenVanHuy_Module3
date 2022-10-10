@@ -18,11 +18,11 @@ public class EmployeeRepository implements IEmployeeRepository {
     private final String UPDATE_EMPLOYEE = "update employee set name= ?,date_of_birth =?, id_card=?, salary=?, phone_number=?, email=?,address =?,position_id =?,education_degree_id =?, division_id=?, username=? where id = ?; ";
     private final String DELETE_BY_ID = "delete from employee where id = ? ;";
     private final String FIND_BY_NAME = "select * from employee where name like ?;";
-    private final String SEARCH = "select employee.*,division.name as class_name \n" +
-            "from employee \n" +
-            "left join division \n" +
-            "on employee.division_id = division.id \n" +
-            "where employee.name like ? and division.name like ?;";
+    private final String SEARCH = "select e.* , d.name  \n" +
+            "            from employee e\n" +
+            "            left join division d \n" +
+            "            on e.division_id = d.id \n" +
+            "            where e.name like ? and d.name like ?;";
     @Override
     public List<Employee> finAll() {
         List<Employee> employeeList = new ArrayList<>();
@@ -149,8 +149,8 @@ public class EmployeeRepository implements IEmployeeRepository {
         List<Employee> employeeList = new ArrayList<>();
         try {
             PreparedStatement ps = connection.prepareStatement(SEARCH);
-            ps.setString(1,searchName);
-            ps.setString(2,searchDivision);
+            ps.setString(1,"%"+searchName+"%");
+            ps.setString(2,"%"+searchDivision+"%");
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");

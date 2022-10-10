@@ -237,7 +237,7 @@ insert into contract_detail
 
 -- select employee.*,division.name as class_name 
 -- from employee 
--- left join division 
+-- left join division facility
 -- on employee.division_id = division.id 
 -- where employee.name like "%Toản" and division.name like "Quản lý";
 

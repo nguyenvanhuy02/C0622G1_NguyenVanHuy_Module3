@@ -6,6 +6,7 @@ import repository.impl.EmployeeRepository;
 import service.IEmployeeSevice;
 import validation.Validation;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +48,9 @@ public class EmployeeService implements IEmployeeSevice {
         }
         else if (!Validation.checkPhone(employee.getPhoneNumber())){
             errorMap.put("phoneNumber","Số điện thoại không đúng định dạng");
+        }
+        if (employee.getDateOfBirth().equals("")){
+            errorMap.put("dateOfBirth","Ngày sinh không được để trống!");
         }
 
         if (errorMap.size()==0){

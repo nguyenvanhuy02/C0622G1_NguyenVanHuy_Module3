@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../bootstrap/bootstrap-5.0.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../bootstrap/datatables/css/dataTables.bootstrap5.css">
 </head>
-<body background="/img/cover_furama_1.jpg" >
+<body background="/img/cover_furama_1.jpg" style="background-size: cover" >
 <h1 class="text-center">
     Trang danh sách nhân viên
 </h1>
@@ -28,7 +28,7 @@
         <select class="form-select" name="searchDivision">
             <option selected value="">Bộ phận...</option>
             <c:forEach var="division" items="${listDivision}">
-                <option value="${division.name}">${division.name}</option>
+                <option value="${division.getName()}">${division.getName()}</option>
             </c:forEach>
         </select>
     </div>
@@ -88,18 +88,26 @@
                 <td>Sau đại học</td>
             </c:if>
 
-            <c:if test="${employee.getDivisionId() == 1}">
-                <td>Sale-Marketing</td>
-            </c:if>
-            <c:if test="${employee.getDivisionId() == 2}">
-                <td>Hành chính</td>
-            </c:if>
-            <c:if test="${employee.getDivisionId() == 3}">
-                <td>Phục vụ</td>
-            </c:if>
-            <c:if test="${employee.getDivisionId() == 4}">
-                <td>Quản lý</td>
-            </c:if>
+<%--            <c:if test="${employee.getDivisionId() == 1}">--%>
+<%--                <td>Sale-Marketing</td>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${employee.getDivisionId() == 2}">--%>
+<%--                <td>Hành chính</td>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${employee.getDivisionId() == 3}">--%>
+<%--                <td>Phục vụ</td>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${employee.getDivisionId() == 4}">--%>
+<%--                <td>Quản lý</td>--%>
+<%--            </c:if>--%>
+            <td>
+                <c:forEach var="divisionId" items="${listDivision}">
+                    <c:if test="${employee.divisionId == divisionId.id}">
+                        <span id="${status.count}">${divisionId.name}</span>
+                    </c:if>
+                </c:forEach>
+            </td>
+            
 
             <td>${employee.getUsername()}</td>
 

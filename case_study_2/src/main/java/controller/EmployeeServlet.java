@@ -117,6 +117,7 @@ public class EmployeeServlet extends HttpServlet {
 
     private void showListEmployee(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("listEmployee", employeeService.finAll());
+        request.setAttribute("listDivision", divisionService.findAll());
         try {
             request.getRequestDispatcher("view/employee/listEmployee.jsp").forward(request,response);
         } catch (ServletException e) {
@@ -184,6 +185,7 @@ public class EmployeeServlet extends HttpServlet {
             if (map.size()!=0){
                 mess = " thêm mới không thành công !";
                 request.setAttribute("map",map);
+                request.setAttribute("employee",employee);
             }
             request.setAttribute("mess",mess);
             addEmployee(request,response);
